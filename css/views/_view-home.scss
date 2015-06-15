@@ -1,0 +1,72 @@
+.view-home {
+
+    .logo {
+        width: 215px;
+        height: 35px;
+    }
+
+    #settings {
+        float: right;
+    }
+
+    .project {
+
+        margin-bottom: $indention-small;
+        background: $brown-light;//$gray-light;
+
+        .photo{
+            width: $height-row-project;
+            height: $height-row-project;
+        }
+
+        .description {
+            margin-top: 0px;
+        }
+
+        .bar {
+            width:100%;
+            //max-width: 100%;
+            //min-width: 2px;
+            bottom:0px;
+            max-height:$height-row-project/3*2;
+
+            background: $brown-dark;
+            height: 2px;//$height-row-project/3*2;
+
+        }
+
+        &.zerodays {
+            .bar {
+                background: $blue;
+            }
+        }
+
+        &.expired {
+            .bar {
+                background: $red !important;
+            }
+        }
+
+        &.notrunning {
+            background: $gray-light;
+
+            .bar {
+                background: $gray-light;
+            }
+
+            .description {
+                color:$brown-light;
+            }
+        }
+
+        .title {
+            color:$brown-light;
+            height: $height-row-project/3;
+            background:white;
+            padding: $indention;
+        }
+
+        @extend .addRemoveAnimation;
+
+    }
+}

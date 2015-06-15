@@ -1,0 +1,31 @@
+.button {
+    width:100%;
+    min-height: $height-button;
+    cursor: pointer;
+    margin-top:$indention;
+    color:$white;
+    background:$brown-dark;
+    text-transform: lowercase;
+
+    &.centered {
+        text-align: center;
+        line-height: $height-button;
+    }
+
+    &.delete {
+        background:red;
+        color:$white;
+    }
+
+    &.indirect {
+        background: $blue;
+    }
+    &.ng-click-active {
+        opacity:0.6;
+    }
+    &.isHiden {
+        height:0px;
+        min-height:0px;
+        overflow:hidden;
+    }
+}

@@ -1,0 +1,66 @@
+.view-detail {
+
+    .cover {
+
+        .photo{
+            width: 100%;
+            height: 120px;
+
+            .dropdown {
+                margin-top: 8%;
+                margin-left: 10%;
+            }
+
+            img {
+                width: 30px;
+                right: 5px;
+                position: absolute;
+                top: 5px;
+            }
+        }
+
+        .title {
+            background-color : white;
+            padding:0px;
+            margin-bottom: -3px;
+
+            &:focus {
+                background:$green-lightest;
+                padding:5px;
+            }
+        }
+
+        .annotation {
+            height: 27px;
+            background:white;
+            padding: 0px $indention;
+            border:1px solid lightgray;
+
+            input {
+                font-size: 17px;
+                font-weight: bold;
+                text-align: center;
+                color:$blue;
+            }
+
+        }
+    }
+
+    .delete {
+        margin-top: 30px;
+    }
+
+    &.ng-animate {
+        .phase.ng-animate {
+            @include animation('none 0s');
+            --webkit-transition: none;
+            transition: none;
+        }
+    }
+
+    .phase.ng-animate {
+        @extend .addRemoveAnimation;
+    }
+
+
+}
