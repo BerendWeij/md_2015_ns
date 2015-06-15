@@ -24,6 +24,10 @@
                 //console.log(object.data)
             });
 
+            $scope.selectStation = function(station){
+                $scope.selectedStation = station;
+            }
+
         };
 
 })();

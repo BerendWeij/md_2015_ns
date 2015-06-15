@@ -3,7 +3,8 @@
 
     angular.module('TrainStationApp', [
         'TrainStationController', 
-        'TrainStationDirectives'
+        'TrainStationDirectives',
+        'ngAnimate'
     ]);
 
     angular.module('TrainStationController', []);
