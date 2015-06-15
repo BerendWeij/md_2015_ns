@@ -148,6 +148,7 @@ button[type_submit]     { -webkit-appearance: none; }
   	padding:10px;
     z-index: 99999;
     padding-top: auto;
+    cursor: pointer;
 }
 
 .x-button.ng-hide {
