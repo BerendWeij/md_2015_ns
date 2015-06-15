@@ -3,26 +3,49 @@
 
     angular
         .module('TrainStationController')
-        .controller('StationController', ['$scope', 'stationService', stationController]);
+        .controller('StationController', ['$scope', '$http', '$localStorage', 'stationService',
+                     stationController]);
                 
-        function stationController($scope, stationService) {
-        
+        function stationController($scope, $http, $localStorage, stationService) {
             $scope.stations = "";
-            
             $scope.searchQuery = "";
-
             $scope.searchType = "";
-
             $scope.selectedStation = "";
 
-            stationService.getAll().then(function(object) {
-                //$scope.stations = object.data;
-                console.log(object.data);
-            });
+            $scope.$storage = $localStorage;
+            // Easily clear the current history by uncommenting:
+            // $scope.$storage.sessionHistory = [];
+            $scope.updateLocalStorage = function(query)
+            {
+                $scope.$storage.sessionHistory = {
+                    query: query,
+                    date: new Date(),
+                };
+            }
+
+            $scope.getStationByLocation = function(keywords) {
+                stationService.getByLocation(keywords).then(function(object) {
+                    //$scope.stations = object.data
+                    console.log(object)
+                });
+            }
+
+            $scope.getStationByType = function(type) {
+                stationService.getByType(type).then(function(object) {
+                    //$scope.stations = object.data;
+                    console.log(object);
+                });
+            }
+
+            /*$http.get('data/trainstations.json').then(function(object) {
+                $scope.stations = object.data;
+                //console.log(object.data)
+            });*/
 
             $scope.selectStation = function(station){
                 $scope.selectedStation = station;
             }
+
         };
 
 })();

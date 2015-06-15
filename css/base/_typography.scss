@@ -1,0 +1,77 @@
+body {
+  @include defaultFont(14);
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+p, pre, li {
+    @include defaultFont(14);
+    margin-bottom: 0px;
+}
+
+h1 {
+    @include headerFont(17);
+    margin: 0;
+}
+
+h2 {
+    @include headerFont(17);
+    text-transform: uppercase;
+    margin: 20px 0px 10px;
+}
+
+.title {
+    text-transform: uppercase;
+    line-height: 12px;
+}
+
+.additional {
+    @include narrowFont();
+    display: inline-block;
+}
+
+.description {
+    margin-top:-$height-row-project/3*2;
+    padding: 6px $indention;
+    line-height:20px;
+    color:white;
+    text-transform: none;
+}
+
+input {
+    @include defaultFont(14);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.text-right {
+    text-align: right;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url("/style/fonts/Roboto-Light.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url("/style/fonts/Roboto-Regular.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url("/style/fonts/Roboto-Bold.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

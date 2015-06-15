@@ -1,0 +1,19 @@
+@include keyframes(elementEnter) {
+    0%   { -webkit-transform: scale(0.95, 0.95); opacity:0}
+    100% { -webkit-transform: scale(1, 1); opacity:1 }
+}
+
+@include keyframes(elementLeave) {
+    0%   { -webkit-transform: scale(1, 1); opacity:1 }
+    100% { -webkit-transform: scale(0.95, 0.95); opacity:0}
+}
+
+.addRemoveAnimation {
+    &.ng-enter {
+        @include animation('elementEnter .5s');
+    }
+
+    &.ng-leave {
+        @include animation('elementLeave .5s');
+    }
+}

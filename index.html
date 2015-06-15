@@ -3,7 +3,6 @@
 <head>
     <meta charset='utf-8'/>
     <title>Train station app</title>
-    <link rel='stylesheet' type='text/css' href='css/animate.css' />
     <link rel='stylesheet' type='text/css' href='css/main.css' />
 </head>
 <body>
@@ -11,26 +10,42 @@
 <div class='wrapper'>
     <section class='search_section' ng-controller="StationController">
         <header>
-            <input name='' value='' placeholder="Zoeken..." ng-model="searchQuery">
-            <select ng-model="searchType">
+            <input  ng-model="$storage.localSearchQuery"
+                    ng-change="updateLocalStorage($storage.localSearchQuery)"
+                    ng-keyup="getStationByLocation($storage.localSearchQuery)">
+
+            <select ng-model="searchType" ng-change="getStationByType(searchType)">
                 <option value=''>-- TYPE --</option>
-                <option value='stoptreinstation'>Stop trein station</option>
+                <option value='stoptreinstation'>Stoptrein station</option>
                 <option value='knooppuntintercitystation'>Knoop punt intercity station</option>
-                <option value='megastation'>Mega Station</option>
+                <option value='intercitystation'>Intercity station</option>
+                <option value='knooppuntstoptreinstation'>Knoop punt stoptrein station</option>
+                <option value='megastation'>Mega station</option>
+                <option value='sneltreinstation'>Sneltrein station</option>
+                <option value='knooppuntsneltreinstation'>Knoop punt sneltrein station</option>
+                <option value='facultatiefstation'>Facultatief station</option>
             </select>
+            
+            <span>
+                {{ $storage.sessionHistory.query }} @ 
+                {{ $storage.sessionHistory.date | date:'d MMM yyyy HH:mm:ss'}}    
+            </span>
         </header> 
         <div class='train_stations_list'>
             <div class='data-row animated fadeIn' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
                 <station-info></station-info>
             <div class='data-row animated fadeIn' ng-click="selectStation(station)" ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
                 {{ station.name }}
+            <div class='data-row animated fadeIn'
+                 ng-click="selectStation(station)" 
+                 ng-repeat="station in stations | filter:{'name': $storage.localSearchQuery, 'type': searchType}">
+                 {{ station.name }}
             </div>
         </div>
 
-        <div class="x-button animate" ng-show="selectedStation"
-             ng-click="selectedStation=''">terug</div>
-
         <div class="menu animate" ng-show="selectedStation">
+            <div class="x-button animate" ng-show="selectedStation"
+             ng-click="selectedStation=''">terug</div>
             <h4> 
                 <u>{{selectedStation.name}}</u> 
                 ({{selectedStation.type}})
@@ -53,6 +68,8 @@
 </div>
 
 <script src='lib/angular.js'></script>
+<script src='lib/angular-animate.js'></script>
+<script src='lib/ngStorage.js'></script>
 <script src='app/app.js'></script>
 <script src='app/services/StationService.js'></script>
 <script src='app/controllers/TrainStationController.js'></script>
