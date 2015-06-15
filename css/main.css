@@ -1,0 +1,133 @@
+/* _____________________________________________________________________________
+ *
+ * Author:  Kim Koomen
+ * Template Author: Kim Koomen
+ * Website: http://www.koomendesign.nl
+ * Email:   info@koomendesign.nl
+ * 
+ * Copyright 2015
+ * _____________________________________________________________________________ */
+
+
+
+/* __________________________________________________________________________
+ *
+ * Base
+ * __________________________________________________________________________ */
+
+body, html {
+    font-family:'Arial';
+}
+
+*, :before, :after {
+-moz-box-sizing:border-box;
+ -ms-box-sizing:border-box;
+     box-sizing:border-box;
+}
+
+
+/* __________________________________________________________________________
+ *
+ * Full Background Size
+ * __________________________________________________________________________ */
+
+body {
+background: url('../images/body.jpg') no-repeat top center fixed;
+-webkit-background-size: cover;
+   -moz-background-size: cover;
+     -o-background-size: cover;
+        background-size: cover;
+                    height:100%;
+}
+
+
+/* __________________________________________________________________________
+ *
+ * Fonts
+ * __________________________________________________________________________ */
+
+h1 { font-size:3.125em !important; } /* 50px */
+h2 { font-size:1.500em !important; } /* 24px */
+h3 { font-size:1.000em !important; } /* 16px */
+h4 { font-size:0.875em !important; } /* 14px */
+h5 { font-size:0.750em !important; } /* 12px */
+h6 { font-size:0.750em !important; } /* 12px */
+
+h1, h2, h3, h4, h5, h6, p, a, li    { font-family:'Tahoma', Arial, sans-serif; }
+
+p, a                                { font-size:0.875em; text-decoration:none; }
+
+/* __________________________________________________________________________
+ *
+ * Default Classes
+ * __________________________________________________________________________ */
+
+/* used to clear floats */
+.clear                  { clear:both; }
+
+/* used with a span-tag for required fields or errors */
+.red                    {  color:red;  }
+
+/* main div */
+.wrapper                { position:relative; width:700px; margin:0 auto; }
+
+
+/* __________________________________________________________________________
+ *
+ * Input / Button 
+ * __________________________________________________________________________ */
+
+input[type_submit],
+button[type_submit]     { -webkit-appearance: none; }
+
+
+/* __________________________________________________________________________
+ *
+ * Selection foreground / background
+ * __________________________________________________________________________ */
+
+::selection             { background: #f77f00; color:#fff; }
+::-moz-selection        { background: #f77f00; color:#fff; }
+
+
+/* __________________________________________________________________________
+ *
+ * Make element not selectable
+ * __________________________________________________________________________ */
+
+.no_select {
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+}
+
+
+/* __________________________________________________________________________
+ *
+ * Smooth animation
+ * __________________________________________________________________________ */
+
+.transition {
+-webkit-transition: .25s ease-in-out;
+   -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+}
+
+
+
+/* __________________________________________________________________________
+ *
+ * Application
+ * __________________________________________________________________________ */
+
+.search_section                             { width:100%; box-shadow:0px 1px 2px #999; }
+.search_section header                      { padding:15px; background:#ffcf13; color:#fff; }
+.search_section .train_stations_list        { height:375px; overflow-y:scroll; overflow-x:hidden; }
+.search_section .data-row                   { background:#f0f0f0; color:#000; width:100%; padding:20px; margin:0; }
+.search_section .data-row:nth-child(2n+2)   { background:#fff; }
+.search_section .data-row:hover             { cursor:pointer; background:#ffcf13; color:#fff; }
+.search_section header input, select        { border:0; padding:5px 10px; }
+

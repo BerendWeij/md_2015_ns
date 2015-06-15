@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang='en' ng-app="TrainStationApp">
+<head>
+    <meta charset='utf-8'/>
+    <title>Train station app</title>
+    <link rel='stylesheet' type='text/css' href='css/animate.css' />
+    <link rel='stylesheet' type='text/css' href='css/main.css' />
+</head>
+<body>
+
+<div class='wrapper'>
+    <section class='search_section' ng-controller="StationController">
+        <header>
+            <input name='' value='' placeholder="Zoeken..." ng-model="searchQuery">
+            <select ng-model="searchType">
+                <option value=''>-- TYPE --</option>
+                <option value='stoptreinstation'>Stop trein station</option>
+                <option value='knooppuntintercitystation'>Knoop punt intercity station</option>
+                <option value='megastation'>Mega Station</option>
+            </select>
+        </header> 
+        <div class='train_stations_list'>
+            <div class='data-row animated fadeIn' ng-dblclick='showName(station)' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
+                <station-info></station-info>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src='lib/angular.js'></script>
+<script src='app/app.js'></script>
+<script src='app/directives/stationInfo.js'></script>
+<script src='app/controllers/TrainStationController.js'></script>
+</body>
+</html>
