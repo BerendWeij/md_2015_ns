@@ -11,17 +11,26 @@
 <div class='wrapper'>
     <section class='search_section' ng-controller="StationController">
         <header>
-            <input name='' value='' placeholder="Zoeken..." ng-model="searchQuery">
+            <input  ng-model="$storage.localSearchQuery" 
+                    ng-change="updateLocalStorage($storage.localSearchQuery)">
+
             <select ng-model="searchType">
                 <option value=''>-- TYPE --</option>
                 <option value='stoptreinstation'>Stop trein station</option>
                 <option value='knooppuntintercitystation'>Knoop punt intercity station</option>
                 <option value='megastation'>Mega Station</option>
             </select>
+            
+            <span>
+                {{ $storage.sessionHistory.query }} @ 
+                {{ $storage.sessionHistory.date | date:'d MMM yyyy HH:mm:ss'}}    
+            </span>
         </header> 
         <div class='train_stations_list'>
-            <div class='data-row animated fadeIn' ng-click="selectStation(station)" ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
-                {{ station.name }}
+            <div class='data-row animated fadeIn'
+                 ng-click="selectStation(station)" 
+                 ng-repeat="station in stations | filter:{'name': $storage.localSearchQuery, 'type': searchType}">
+                 {{ station.name }}
             </div>
         </div>
 
@@ -52,6 +61,7 @@
 
 <script src='lib/angular.js'></script>
 <script src='lib/angular-animate.js'></script>
+<script src='lib/ngStorage.js'></script>
 <script src='app/app.js'></script>
 <script src='app/controllers/TrainStationController.js'></script>
 </body>

@@ -4,7 +4,8 @@
     angular.module('TrainStationApp', [
         'TrainStationController', 
         'TrainStationDirectives',
-        'ngAnimate'
+        'ngAnimate',
+        'ngStorage'
     ]);
 
     angular.module('TrainStationController', []);
