@@ -28,21 +28,6 @@ body, html {
 
 /* __________________________________________________________________________
  *
- * Full Background Size
- * __________________________________________________________________________ */
-
-body {
-background: url('../images/body.jpg') no-repeat top center fixed;
--webkit-background-size: cover;
-   -moz-background-size: cover;
-     -o-background-size: cover;
-        background-size: cover;
-                    height:100%;
-}
-
-
-/* __________________________________________________________________________
- *
  * Fonts
  * __________________________________________________________________________ */
 

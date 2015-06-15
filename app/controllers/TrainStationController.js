@@ -3,9 +3,9 @@
 
     angular
         .module('TrainStationController')
-        .controller('StationController', ['$scope', '$http', stationController]);
+        .controller('StationController', ['$scope', 'getStations', stationController]);
                 
-        function stationController($scope, $http) {
+        function stationController($scope, getStations) {
         
             $scope.stations = "";
 
@@ -15,15 +15,9 @@
 
             $scope.selectedStation = "";
 
-            $scope.showName = function(station) {
-              alert('You just double clicked on: '+station.name);
+            $scope.getAllStations = function() {
+                $scope.stations = getStations.getAll();
             };
-
-            $http.get('data/trainstations.json').then(function(object) {
-                $scope.stations = object.data;
-                //console.log(object.data)
-            });
-
         };
 
 })();

@@ -3,7 +3,8 @@
 
     angular.module('TrainStationApp', [
         'TrainStationController', 
-        'TrainStationDirectives'
+        'TrainStationDirectives',
+        'TrainStationServices'
     ]);
 
     angular.module('TrainStationController', []);

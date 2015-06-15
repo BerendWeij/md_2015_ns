@@ -20,7 +20,7 @@
             </select>
         </header> 
         <div class='train_stations_list'>
-            <div class='data-row animated fadeIn' ng-dblclick='showName(station)' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
+            <div class='data-row animated fadeIn' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
                 <station-info></station-info>
             </div>
         </div>
@@ -30,6 +30,7 @@
 <script src='lib/angular.js'></script>
 <script src='app/app.js'></script>
 <script src='app/directives/stationInfo.js'></script>
+<script src='app/services/StationService.js'></script>
 <script src='app/controllers/TrainStationController.js'></script>
 </body>
 </html>
