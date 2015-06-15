@@ -3,21 +3,26 @@
 
     angular
         .module('TrainStationController')
-        .controller('StationController', ['$scope', 'getStations', stationController]);
+        .controller('StationController', ['$scope', 'stationService', stationController]);
                 
-        function stationController($scope, getStations) {
+        function stationController($scope, stationService) {
         
             $scope.stations = "";
-
+            
             $scope.searchQuery = "";
 
             $scope.searchType = "";
 
             $scope.selectedStation = "";
 
-            $scope.getAllStations = function() {
-                $scope.stations = getStations.getAll();
-            };
+            stationService.getAll().then(function(object) {
+                //$scope.stations = object.data;
+                console.log(object.data);
+            });
+
+            $scope.selectStation = function(station){
+                $scope.selectedStation = station;
+            }
         };
 
 })();

@@ -22,14 +22,38 @@
         <div class='train_stations_list'>
             <div class='data-row animated fadeIn' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
                 <station-info></station-info>
+            <div class='data-row animated fadeIn' ng-click="selectStation(station)" ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
+                {{ station.name }}
             </div>
         </div>
+
+        <div class="x-button animate" ng-show="selectedStation"
+             ng-click="selectedStation=''">terug</div>
+
+        <div class="menu animate" ng-show="selectedStation">
+            <h4> 
+                <u>{{selectedStation.name}}</u> 
+                ({{selectedStation.type}})
+            </h4>
+            <p>
+                {{selectedStation.geoLat}} / {{selectedStation.geoLong}}
+                <br>
+                <br>    
+                {{selectedStation.code}}: {{selectedStation.uic}}
+                <br>
+                Middel: {{selectedStation.middleName}}
+                <br>
+                Kort: {{selectedStation.shortName}}
+                <br>
+                rdt_url: {{selectedStation.rdtURL}}
+            </p>
+        </div>
+
     </section>
 </div>
 
 <script src='lib/angular.js'></script>
 <script src='app/app.js'></script>
-<script src='app/directives/stationInfo.js'></script>
 <script src='app/services/StationService.js'></script>
 <script src='app/controllers/TrainStationController.js'></script>
 </body>
