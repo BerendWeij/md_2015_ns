@@ -1,14 +1,3 @@
-/* _____________________________________________________________________________
- *
- * Author:  Kim Koomen
- * Template Author: Kim Koomen
- * Website: http://www.koomendesign.nl
- * Email:   info@koomendesign.nl
- * 
- * Copyright 2015
- * _____________________________________________________________________________ */
-
-
 
 /* __________________________________________________________________________
  *
@@ -25,20 +14,6 @@ body, html {
      box-sizing:border-box;
 }
 
-
-/* __________________________________________________________________________
- *
- * Full Background Size
- * __________________________________________________________________________ */
-
-body {
-background: url('../images/body.jpg') no-repeat top center fixed;
--webkit-background-size: cover;
-   -moz-background-size: cover;
-     -o-background-size: cover;
-        background-size: cover;
-                    height:100%;
-}
 
 
 /* __________________________________________________________________________
