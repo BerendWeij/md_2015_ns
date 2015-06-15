@@ -42,8 +42,17 @@
                 //console.log(object.data)
             });*/
 
-            $scope.selectStation = function(station){
+            $scope.selectStation = function(station) {
                 $scope.selectedStation = station;
+                $scope.map = { center: { latitude: station.geoLat, longitude: station.geoLong }, zoom: 15};
+                
+                $scope.marker = {
+                    id: 5,
+                    coords: {
+                        latitude: station.geoLat,
+                        longitude: station.geoLong
+                    }
+                };
             }
 
         };

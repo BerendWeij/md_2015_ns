@@ -42,8 +42,14 @@
                  {{ station.name }}
             </div>
         </div>
-
+        <div class="animate maps" id="maps" ng-show="selectedStation">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-marker coords="marker.coords" idkey="marker.id">
+        </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
         <div class="menu animate" ng-show="selectedStation">
+           
             <div class="x-button animate" ng-show="selectedStation"
              ng-click="selectedStation=''">terug</div>
             <h4> 
@@ -69,6 +75,9 @@
 
 <script src='lib/angular.js'></script>
 <script src='lib/angular-animate.js'></script>
+<script type="text/javascript" src="lib/lodash.min.js"></script>
+<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script type="text/javascript" src="lib/angular-google-maps.js"></script>
 <script src='lib/ngStorage.js'></script>
 <script src='app/app.js'></script>
 <script src='app/services/StationService.js'></script>

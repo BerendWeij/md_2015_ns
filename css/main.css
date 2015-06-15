@@ -47,7 +47,7 @@ p, a                                { font-size:0.875em; text-decoration:none; }
 .red                    {  color:red;  }
 
 /* main div */
-.wrapper                { position:relative; width:700px; margin:0 auto; }
+.wrapper                { position:relative; width:700px; margin:0 auto; overflow: hidden; }
 
 
 /* __________________________________________________________________________
@@ -113,7 +113,22 @@ button[type_submit]     { -webkit-appearance: none; }
  *
  * info menu
  * __________________________________________________________________________ */
+.angular-google-map-container { 
+  height: 300px; 
+  width: 700px;
+}
+.maps {
+  position: absolute;
+  top: 55px;
+  height: 300px;
+  width: 700px;
+  overflow: hidden;
+}
 
+.maps.ng-hide {
+  margin-left: 2000px;
+  opacity: 0;
+}
 .menu {
   	position: absolute;
   	bottom: 0;
@@ -159,8 +174,8 @@ button[type_submit]     { -webkit-appearance: none; }
 }
 
 .animate{
-	-webkit-transition:all 0.2s ease-out;
-  	transition:all 0.2s ease-out;
+	-webkit-transition:all 0.4s ease-out;
+  	transition:all 0.4s ease-out;
 }
 
 .stats.ng-enter,
