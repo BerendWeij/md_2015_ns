@@ -5,7 +5,8 @@
         'TrainStationController', 
         'TrainStationDirectives',
         'ngAnimate',
-        'ngStorage'
+        'ngStorage',
+        'uiGmapgoogle-maps'
     ]);
 
     angular.module('TrainStationController', []);
