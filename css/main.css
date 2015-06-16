@@ -49,7 +49,7 @@ p, a                                { font-size:0.875em; text-decoration:none; }
 
 /* __________________________________________________________________________
  *
- * Input / Button 
+ * Input / Button
  * __________________________________________________________________________ */
 
 input[type_submit],
@@ -110,8 +110,8 @@ button[type_submit]     { -webkit-appearance: none; }
  *
  * info menu
  * __________________________________________________________________________ */
-.angular-google-map-container { 
-  height: 300px; 
+.angular-google-map-container {
+  height: 300px;
   width: 700px;
 }
 .maps {
@@ -184,3 +184,26 @@ button[type_submit]     { -webkit-appearance: none; }
 .stats.ng-enter.ng-enter-active {
   opacity: 1;
 }
+
+/* __________________________________________________________________________
+ *
+ * language buttons
+ * __________________________________________________________________________ */
+
+ .btn-en {
+   width: 34px;
+   height: 22px;
+   border  : none;
+   background-image: url(../img/UK.jpg);
+ }
+
+ .btn-nl {
+   width: 34px;
+   height: 22px;
+   border  : none;
+   background-image: url(../img/NL.jpg);
+ }
+
+ .btn-en:hover,.btn-nl:hover {
+   cursor: pointer;
+ }

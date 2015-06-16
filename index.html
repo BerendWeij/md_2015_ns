@@ -2,12 +2,16 @@
 <html lang='en' ng-app="TrainStationApp">
 <head>
     <meta charset='utf-8'/>
-    <title>Train station app</title>
+    <title>{{'TITLE' | translate}}</title>
     <link rel='stylesheet' type='text/css' href='css/main.css' />
 </head>
 <body>
 
 <div class='wrapper'>
+  <div ng-controller="Ctrl" class="ng-scope">
+    <button class="btn ng-scope btn-nl" ng-click="changeLanguage('nl')"></button>
+    <button class="btn ng-scope btn-en" ng-click="changeLanguage('en')"></button>
+  </div>
     <section class='search_section' ng-controller="StationController">
         <header>
             <input  ng-model="$storage.localSearchQuery"
@@ -24,15 +28,15 @@
                 <option value='knooppuntsneltreinstation'>Knoop punt sneltrein station</option>
                 <option value='facultatiefstation'>Facultatief station</option>
             </select>
-            
+
             <span>
-                {{ $storage.sessionHistory.query }} @ 
-                {{ $storage.sessionHistory.date | date:'d MMM yyyy HH:mm:ss'}}    
+                {{ $storage.sessionHistory.query }} @
+                {{ $storage.sessionHistory.date | date:'d MMM yyyy HH:mm:ss'}}
             </span>
-        </header> 
+        </header>
         <div class='train_stations_list'>
             <div class='data-row animated fadeIn'
-                 ng-click="selectStation(station)" 
+                 ng-click="selectStation(station)"
                  ng-repeat="station in stations | filter:{'name': $storage.localSearchQuery, 'type': searchType}">
                  {{ station.name }}
             </div>
@@ -44,17 +48,17 @@
             </ui-gmap-google-map>
         </div>
         <div class="menu animate" ng-show="selectedStation">
-           
+
             <div class="x-button animate" ng-show="selectedStation"
              ng-click="selectedStation=''">terug</div>
-            <h4> 
-                <u>{{selectedStation.name}}</u> 
+            <h4>
+                <u>{{selectedStation.name}}</u>
                 ({{selectedStation.type}})
             </h4>
             <p>
                 {{selectedStation.geoLat}} / {{selectedStation.geoLong}}
                 <br>
-                <br>    
+                <br>
                 {{selectedStation.code}}: {{selectedStation.uic}}
                 <br>
                 Middel: {{selectedStation.middleName}}
@@ -74,7 +78,9 @@
 <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
 <script type="text/javascript" src="lib/angular-google-maps.js"></script>
 <script src='lib/ngStorage.js'></script>
+<script type="text/javascript" src="lib/angular-translate.js"></script>
 <script src='app/app.js'></script>
+<script src="app/config/TranslationProvider.js"></script>
 <script src='app/services/StationService.js'></script>
 <script src='app/controllers/TrainStationController.js'></script>
 </body>

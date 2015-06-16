@@ -2,11 +2,12 @@
     'use strict';
 
     angular.module('TrainStationApp', [
-        'TrainStationController', 
+        'TrainStationController',
         'TrainStationServices',
         'ngAnimate',
         'ngStorage',
-        'uiGmapgoogle-maps'
+        'uiGmapgoogle-maps',
+        'pascalprecht.translate'
     ]);
 
     angular.module('TrainStationController', []);
@@ -14,4 +15,3 @@
     angular.module('TrainStationServices', []);
 
 })();
-
