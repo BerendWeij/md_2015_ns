@@ -1,0 +1,62 @@
+.wrapper {
+  position: relative;
+  width: 700px;
+  margin: 0 auto; }
+  .wrapper .search_section {
+    width: 100%;
+    box-shadow: 0px 1px 2px #999; }
+    .wrapper .search_section header {
+      padding: 15px;
+      background: #ffcf13;
+      color: #fff; }
+      .wrapper .search_section header input, .wrapper .search_section header select {
+        border: 0;
+        padding: 5px 10px; }
+    .wrapper .search_section .train_stations_list {
+      height: 375px;
+      overflow-y: scroll;
+      overflow-x: hidden; }
+      .wrapper .search_section .train_stations_list .data-row {
+        background: #f0f0f0;
+        color: #000;
+        width: 100%;
+        padding: 20px;
+        margin: 0; }
+        .wrapper .search_section .train_stations_list .data-row:nth-child(2n+2) {
+          background: #fff; }
+        .wrapper .search_section .train_stations_list .data-row:hover {
+          cursor: pointer;
+          background: #ffcf13;
+          color: #fff; }
+    .wrapper .search_section .menu {
+      position: absolute;
+      bottom: 135px;
+      left: 20px;
+      background: #fff;
+      border: 4px solid #f3ce43;
+      border-radius: 10px;
+      height: 130px;
+      width: 600px;
+      padding: 10px; }
+      .wrapper .search_section .menu h4 {
+        margin-top: 0px; }
+      .wrapper .search_section .menu p {
+        margin-top: -15px; }
+      .wrapper .search_section .menu .x-button {
+        position: absolute;
+        right: 20px;
+        background: #f3ce43;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        height: 35px;
+        width: 60px;
+        padding: 10px;
+        z-index: 99999;
+        padding-top: auto;
+        cursor: pointer; }
+        .wrapper .search_section .menu .x-button .ng-hide {
+          opacity: 0;
+          margin-bottom: -200px; }
+
+/*# sourceMappingURL=style.css.map */

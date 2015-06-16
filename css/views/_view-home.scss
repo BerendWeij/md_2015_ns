@@ -1,72 +1,84 @@
-.view-home {
+.wrapper{
+    position:relative;
+    width:700px;
+    margin:0 auto;
 
-    .logo {
-        width: 215px;
-        height: 35px;
-    }
+    .search_section{
+        width:100%;
+        box-shadow:0px 1px 2px #999;
 
-    #settings {
-        float: right;
-    }
+        header{
+            padding:15px;
+            background:#ffcf13;
+            color:#fff;
 
-    .project {
-
-        margin-bottom: $indention-small;
-        background: $brown-light;//$gray-light;
-
-        .photo{
-            width: $height-row-project;
-            height: $height-row-project;
-        }
-
-        .description {
-            margin-top: 0px;
-        }
-
-        .bar {
-            width:100%;
-            //max-width: 100%;
-            //min-width: 2px;
-            bottom:0px;
-            max-height:$height-row-project/3*2;
-
-            background: $brown-dark;
-            height: 2px;//$height-row-project/3*2;
-
-        }
-
-        &.zerodays {
-            .bar {
-                background: $blue;
+            input, select{
+                border:0;
+                padding:5px 10px;
             }
         }
+        .train_stations_list{
+            height:375px;
+            overflow-y:scroll;
+            overflow-x:hidden;
 
-        &.expired {
-            .bar {
-                background: $red !important;
+            .data-row{
+                background:#f0f0f0;
+                color:#000;
+                width:100%;
+                padding:20px;
+                margin:0;
+
+                &:nth-child(2n+2){
+                    background:#fff;
+                }
+
+                &:hover{
+                    cursor:pointer;
+                    background:#ffcf13;
+                    color:#fff;
+                }
             }
         }
+        .menu{
+            position: absolute;
+            bottom: 135px;
+            left: 20px;
+            background: #fff;
+            border: 4px solid #f3ce43;
+            border-radius: 10px;
+            height: 130px;
+            width: 600px;
+            padding:10px;
 
-        &.notrunning {
-            background: $gray-light;
-
-            .bar {
-                background: $gray-light;
+            h4{
+              margin-top: 0px;
             }
 
-            .description {
-                color:$brown-light;
+            p{
+              margin-top: -15px;
+            }
+
+            .x-button {
+                position: absolute;
+                right: 20px;
+                background: #f3ce43;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+                height: 35px;
+                width: 60px;
+                padding:10px;
+                z-index: 99999;
+                padding-top: auto;
+                cursor: pointer;
+
+                .ng-hide {
+                    opacity: 0;
+                    margin-bottom:-200px;
+                }
             }
         }
-
-        .title {
-            color:$brown-light;
-            height: $height-row-project/3;
-            background:white;
-            padding: $indention;
-        }
-
-        @extend .addRemoveAnimation;
-
     }
 }
+

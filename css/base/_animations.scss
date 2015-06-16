@@ -1,19 +1,41 @@
-@include keyframes(elementEnter) {
-    0%   { -webkit-transform: scale(0.95, 0.95); opacity:0}
-    100% { -webkit-transform: scale(1, 1); opacity:1 }
+.transition {
+-webkit-transition: .25s ease-in-out;
+   -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
 }
 
-@include keyframes(elementLeave) {
-    0%   { -webkit-transform: scale(1, 1); opacity:1 }
-    100% { -webkit-transform: scale(0.95, 0.95); opacity:0}
+.animate{
+    -webkit-transition:all 0.2s ease-out;
+    transition:all 0.2s ease-out;
 }
 
-.addRemoveAnimation {
-    &.ng-enter {
-        @include animation('elementEnter .5s');
-    }
-
-    &.ng-leave {
-        @include animation('elementLeave .5s');
-    }
+.stats.ng-enter,
+.stats.ng-leave.ng-leave-active {
+  opacity:0;
 }
+
+.stats.ng-leave,
+.stats.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+// @include keyframes(elementEnter) {
+//     0%   { -webkit-transform: scale(0.95, 0.95); opacity:0}
+//     100% { -webkit-transform: scale(1, 1); opacity:1 }
+// }
+
+// @include keyframes(elementLeave) {
+//     0%   { -webkit-transform: scale(1, 1); opacity:1 }
+//     100% { -webkit-transform: scale(0.95, 0.95); opacity:0}
+// }
+
+// .addRemoveAnimation {
+//     &.ng-enter {
+//         @include animation('elementEnter .5s');
+//     }
+
+//     &.ng-leave {
+//         @include animation('elementLeave .5s');
+//     }
+// }
