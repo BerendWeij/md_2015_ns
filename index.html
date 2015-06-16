@@ -11,9 +11,9 @@
     <section class='search_section' ng-controller="StationController">
         <header>
             <input  ng-model="$storage.localSearchQuery"
-                    ng-change="updateLocalStorage($storage.localSearchQuery); getStationByLocation($storage.localSearchQuery)">
+                    ng-change="updateLocalStorage($storage.localSearchQuery); search($storage.localSearchQuery, searchType)">
 
-            <select ng-model="searchType" ng-change="getStationByType(searchType)">
+            <select ng-model="searchType" ng-change="search($storage.localSearchQuery, searchType)">
                 <option value=''>-- TYPE --</option>
                 <option value='stoptreinstation'>Stoptrein station</option>
                 <option value='knooppuntintercitystation'>Knoop punt intercity station</option>
@@ -31,10 +31,6 @@
             </span>
         </header> 
         <div class='train_stations_list'>
-            <div class='data-row animated fadeIn' ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
-                <station-info></station-info>
-            <div class='data-row animated fadeIn' ng-click="selectStation(station)" ng-repeat="station in stations | filter:{'name': searchQuery, 'type': searchType}">
-                {{ station.name }}
             <div class='data-row animated fadeIn'
                  ng-click="selectStation(station)" 
                  ng-repeat="station in stations | filter:{'name': $storage.localSearchQuery, 'type': searchType}">

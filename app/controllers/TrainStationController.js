@@ -23,24 +23,27 @@
                 };
             }
 
-            $scope.getStationByLocation = function(keywords) {
+            $scope.search = function(keywords, type) {
+                keywords = keywords || "all";
+                type = type || "all";
+                stationService.get(keywords, type).success(function(object) {
+                    $scope.stations = object;
+                });
+            }
+
+            /*$scope.getStationByLocation = function(keywords) {
                 stationService.getByLocation(keywords).success(function(object) {
-                    //$scope.stations = object
+                    $scope.stations = object
                     console.log(object)
                 });
             }
 
             $scope.getStationByType = function(type) {
                 stationService.getByType(type).success(function(object) {
-                    //$scope.stations = object;
+                    $scope.stations = object;
                     console.log(object);
                 });
-            }
-
-            /*$http.get('data/trainstations.json').success(function(object) {
-                $scope.stations = object.data;
-                //console.log(object.data)
-            });*/
+            }*/
 
             $scope.selectStation = function(station) {
                 $scope.selectedStation = station;
