@@ -11,8 +11,7 @@
     <section class='search_section' ng-controller="StationController">
         <header>
             <input  ng-model="$storage.localSearchQuery"
-                    ng-change="updateLocalStorage($storage.localSearchQuery)"
-                    ng-keyup="getStationByLocation($storage.localSearchQuery)">
+                    ng-change="updateLocalStorage($storage.localSearchQuery); getStationByLocation($storage.localSearchQuery)">
 
             <select ng-model="searchType" ng-change="getStationByType(searchType)">
                 <option value=''>-- TYPE --</option>

@@ -24,20 +24,20 @@
             }
 
             $scope.getStationByLocation = function(keywords) {
-                stationService.getByLocation(keywords).then(function(object) {
-                    //$scope.stations = object.data
+                stationService.getByLocation(keywords).success(function(object) {
+                    //$scope.stations = object
                     console.log(object)
                 });
             }
 
             $scope.getStationByType = function(type) {
-                stationService.getByType(type).then(function(object) {
-                    //$scope.stations = object.data;
+                stationService.getByType(type).success(function(object) {
+                    //$scope.stations = object;
                     console.log(object);
                 });
             }
 
-            /*$http.get('data/trainstations.json').then(function(object) {
+            /*$http.get('data/trainstations.json').success(function(object) {
                 $scope.stations = object.data;
                 //console.log(object.data)
             });*/
